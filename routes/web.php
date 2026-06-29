@@ -1,13 +1,8 @@
 <?php
 
+use App\Http\Controllers\StudentsController;
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\UploadController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/students', 'students');
 
-// Route::view('/upload', 'upload');
-
-// Route::post('/upload', [UploadController::class, 'upload']);
-Route::view('about', 'about');
+Route::post('/students', [StudentsController::class, 'store']);
